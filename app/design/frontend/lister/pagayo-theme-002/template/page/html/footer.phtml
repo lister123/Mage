@@ -42,7 +42,7 @@
 					<div class="headline"><?php echo $this->__('Newsletter') ?></div>	    	
 		    		<?php echo $this->getChildHtml('left.newsletter') ?>
 		    	</div>
-		        
+		         
 		        <div class="footer-social">
 		        	<div class="headline"><?php echo $footersocial->getTitle(); ?></div>
     				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt002-footer-social')->toHtml() ?>
@@ -74,8 +74,14 @@
         			<div class="headline"><?php echo $footerbox5->getTitle(); ?></div>
         			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt002-footer-box5')->toHtml() ?>
         		</div>
+                        
+                            <div class="box6">	
+					<div class="headline"><?php echo $this->__('Product in cart') ?></div>	    	
+		    		<?php echo $this->getChildHtml('cartfooter') ?>
+		    	</div>
 				<div class="clearer"></div>
 		    </div>
+                    
 		</div>
 		
 		<?php //FOOTER 3 ?>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lister_Cartfooter>
+            <version>1.2.3</version>
+        </Lister_Cartfooter>
+    </modules>
+    <global>
+        <models>
+            <cartfooter>
+                <class>Lister_Cartfooter_Model</class>
+                <resourceModel>cartfooter_resource</resourceModel>
+            </cartfooter>          
+            
+            <cartfooter_resource>
+                <class>Lister_Cartfooter_Model_Resource</class>                
+            </cartfooter_resource>          
+        </models>
+     
+         <events>
+   
+            
+            <controller_action_layout_load_before>
+                    <observers>
+                    <lister_cartfooter>
+                        <type>singleton</type>
+                        <class>Lister_Cartfooter_Model_Footer_Observer</class>
+                        <method>Productaddafter</method>
+                    </lister_cartfooter>
+                </observers>
+             </controller_action_layout_load_before>  
+        </events>
+        
+          <blocks>
+            <cartfooter>
+                <class>Lister_Cartfooter_Block</class>
+            </cartfooter>
+        </blocks>
+    </global>   
+    <frontend>
+       <routers>
+            <cartfooter>
+                <use>standard</use>
+                <args>
+                    <module>Lister_Cartfooter</module>
+                    <frontName>cartfooter</frontName>
+                </args>
+            </cartfooter>
+        </routers>
+        <layout>
+            <updates>
+                <cartfooter module="cartfooter">
+                    <file>cartfooterblock.xml</file>
+                </cartfooter>
+            </updates>
+        </layout>
+    </frontend>
+</config>
+
