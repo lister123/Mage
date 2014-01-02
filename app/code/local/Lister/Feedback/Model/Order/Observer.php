@@ -27,7 +27,7 @@ class Lister_Feedback_Model_Order_Observer {
         } else {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('catalog')->__('Please add this product to a brand in the "Categories" tab.'));
 
-            HERE SOME CODE TO TELL MAGENTO TO STOP SAVING THE PRODUCT
+           
 
             return;
         }
