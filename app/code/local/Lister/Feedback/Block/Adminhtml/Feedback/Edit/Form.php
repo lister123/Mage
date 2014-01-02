@@ -9,11 +9,7 @@ class Lister_Feedback_Block_Adminhtml_Feedback_Edit_Form extends Mage_Adminhtml_
                     'action' => $this->getUrl('*/*/save', array('feedback_id' => $this->getRequest()->getParam('feedback_id'))),
                     'method' => 'post',
                         ),
-                array(
-                    'id' => 'delete_form',
-                    'action' => $this->getUrl('*/*/delete', array('feedback_id' => $this->getRequest()->getParam('feedback_id'))),
-                    'method' => 'post',
-                        )
+              
         );
 
         $form->setUseContainer(true);

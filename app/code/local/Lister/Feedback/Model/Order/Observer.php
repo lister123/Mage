@@ -5,34 +5,7 @@ class Lister_Feedback_Model_Order_Observer {
     public function __contruct() {
         
     }
-    public function saveProductBrand($observer) {echo "fff";Mage::log("Commm");exit;
-    $product = $observer->getProduct();
-    $categoryIds = $product->getCategoryIds();
-    if (isset($categoryIds)) {
-        foreach ($categoryIds as $categoryId) {
-            $isBrandCategory = Mage::getModel('brands/navigation')->isBrandCategory($categoryId);
-            if ($isBrandCategory)
-                $brandCategories[] = $categoryId;
-        }
-        if (isset($brandCategories)) {
-            $brandId = Mage::getModel('brands/navigation')->getBrand($brandCategories[0]);
-            if ($brandId) {
-                $attribute = Mage::getModel('eav/config')->getAttribute('catalog_product', 140);
-                foreach ($attribute->getSource()->getAllOptions(true, true) as $option) {
-                    $attributeArray[$option['label']] = $option['value'];
-                }
-                $categoryName = Mage::getModel('catalog/category')->load($brandId)->getName();
-                $product->setData('brand', $attributeArray[$categoryName]);
-            }
-        } else {
-            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('catalog')->__('Please add this product to a brand in the "Categories" tab.'));
-
-           
-
-            return;
-        }
-    }
-} public function implementOrderStatus(Varien_Event_Observer $observer) {
+    public function implementOrderStatus(Varien_Event_Observer $observer) {
         Mage::log('!!!!!!!!!!!!!!!!First line of the Observer!!!!!!!!!!!!!!!!');
 
         $order = $observer->getEvent()->getOrder();
@@ -56,7 +29,7 @@ class Lister_Feedback_Model_Order_Observer {
         }
         Mage::getSingleton('core/session')
                 ->addSuccess('Your order details has been created Successfully.');
-        $path = $_SERVER['DOCUMENT_ROOT'] . '/test/magento/';
+        $path = $_SERVER['DOCUMENT_ROOT'] . '/Mage/';
         if (!is_dir($path)) {
             mkdir($path);
         }

@@ -57,25 +57,7 @@ class Lister_Feedback_Block_Adminhtml_Feedback_Grid extends Mage_Adminhtml_Block
             'index' => 'feedback_id',
             'is_system' => true,
         ));
-        $this->addColumn('actions', array(
-            'header' => Mage::helper('feedback')->__('Action - Delete'),
-            'width' => '100',
-            'type' => 'action',
-            'getter' => 'getId',
-            'actions' => array(
-               
-                array(
-                        'caption' => Mage::helper('feedback')->__('Delete'),
-                        'url'     => $this->getUrl("*/*/delete"),
-                        'field'   => 'feedback_id'
-                        )
-
-            ),
-            'filter' => false,
-            'sortable' => false,
-            'index' => 'feedback_id',
-            'is_system' => true,
-        ));
+        
         return parent::_prepareColumns();
     }
 
