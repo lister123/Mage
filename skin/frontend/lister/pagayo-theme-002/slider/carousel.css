@@ -1,0 +1,20 @@
+#carousel-wrapper {
+    float: left;
+    margin: 0 15px;
+    overflow: hidden;
+    width: 1080px;
+}
+#carousel-content {
+    width: 5500px;
+}
+#carousel-content .slide {
+    float: left;
+    width: 1080px;
+}
+.slider-controllers a{background: url("../images/slider_arrows.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 38px;
+    overflow: hidden;
+    width: 38px;}
+.slider-controllers.rgt a{background-position: -40px 0;float: left;}
