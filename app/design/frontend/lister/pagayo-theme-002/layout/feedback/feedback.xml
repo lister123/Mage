@@ -2,13 +2,19 @@
 <layout version="0.1.0">
     
     <feedback_index_index>
+	 <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
         <reference name="content">
             <block type="feedback/feedback" name="feedbackblock" template="feedback/feedback.phtml" />
         </reference>
+		
     </feedback_index_index>
     <default>
+        
         <reference name="root">
-           
             <action method="setHeaderTitle" translate="title" module="feedback">
                 <title>Feedback</title>
             </action>

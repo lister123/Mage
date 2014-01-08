@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+
+    <sliderblock translate="label">
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>slider/carousel.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>slider/carousel.css</name>
+            </action>            
+        </reference>
+        <reference name="footer">     
+            <action method="unsetData">
+                <key>cache_lifetime</key>
+            </action>
+            <action method="unsetData">
+                <key>cache_tags</key>
+            </action>
+            <block type="slider/sliderblock" name="sliderblock" as="sliderblock"  template="slider/sliderblock.phtml"/>
+            <action method="setChild">
+                <name>sliderblock</name>
+                <block>sliderblock</block>
+            </action>
+        </reference>
+    </sliderblock>
+</layout>

@@ -1,0 +1,35 @@
+<?php
+$collection = Mage::getModel('news/news')->getCollection();
+       ?>
+    <div id="slider-container">
+        <div class ="slider-controllers">
+            <a href="javascript:" class="carousel-control" rel="prev" style="float: left">&nbsp;</a>
+        </div>
+        <div id="carousel-wrapper">
+            <div id="carousel-content">
+                <div class="slide">
+                    <h3>News List</h3>
+                    <div class="slider-content">
+                    </div>
+                </div>
+                <?php
+                foreach ($collection as $blogpost) {
+                    ?>
+                    <div class="slide">
+                        <h3><?php echo $blogpost->getTitle(); ?></h3>
+                        <div class="slider-content">
+                            <?php echo $blogpost->getContent(); ?>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <div class ="slider-controllers rgt">
+            <a href="javascript:" class="carousel-control" rel="next" style="">&nbsp;</a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <script type="text/javascript">
+        new Carousel('carousel-wrapper', $$('#carousel-content .slide'), $$('a.carousel-control'), {auto: true, frequency: 3, circular: true});
+    </script>
+<?php // endif; ?>
