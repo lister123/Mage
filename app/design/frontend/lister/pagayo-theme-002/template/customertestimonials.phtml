@@ -1,0 +1,56 @@
+<div class="box simple_contact">
+    <?php
+    $user = $this->getUserdetails();
+      if (!empty($user)) {
+            /* Get the customer data */
+            /* Get the customer's full name */
+            $firstname = $user['firstname'];
+            /* Get the customer's last name */
+            $lastname = $user['lastname'];
+            /* Get the customer's email address */
+            $email = $user['email'];
+            $telephone = isset($user['telephone']) ? $user['telephone'] : '' ;
+        }
+        ?>
+<form id="simple_contact_form" name="simple_contact_form" action="<?php echo $this->getUrl('lister/index/create') ?>" method="post">
+    <fieldset class="group-select">
+        <h4 class="legend">Write Your Testimonials</h4>
+        <ul>
+        <li>
+                <div class="input-box">
+                    <label for="first-name">Enter your first name <span class="required">*</span></label><br />
+                    <input name="customer_first_name" id="customer_first_name" title="First Name" value="<?php echo $firstname;?>" class="required-entry input-text" type="text" />
+                </div>
+                <div class="input-box">
+                    <label for="last-name">Enter your last name <span class="required">*</span></label><br />
+                    <input name="customer_last_name" id="customer_last_name" title="Last Name" value="<?php echo $lastname;?>" class="required-entry input-text" type="text" />
+                </div>
+                <div class="input-box">
+                    <label for="name">Enter your mobile number </label><br />
+                    <input name="customer_phone_number" id="customer_phone_number" title="mobile" value="<?php echo $telephone;?>" class="required-entry input-text" type="text" />
+                </div>
+                <div class="input-box">
+                    <label for="email">And your email <span class="required">*</span></label><br />
+                    <input name="customer_email" id="customer_email" title="Email" value="<?php echo $email;?>" class="required-entry input-text validate-email" type="text" />
+                </div>
+                <div class="clear"></div>
+                <div class="input-box">
+           &nbsp;        <label for="content">Remarks <span class="required">*</span></label><br />
+                    <textarea name="content" id="content" title="Comment" class="required-entry input-text" style="height:100px;" cols="50" rows="3"></textarea>
+                </div>
+                </li>
+                </ul>
+    </fieldset>
+    <div class="button-set">
+        <p class="required">* Required Fields</p>
+        <button class="form-button" type="submit"><span>Submit</span></button>
+    </div>
+</form>
+    
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('simple_contact_form');
+   
+//]]>
+</script>

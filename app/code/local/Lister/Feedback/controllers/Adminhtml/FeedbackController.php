@@ -10,6 +10,7 @@ class Lister_Feedback_Adminhtml_FeedbackController extends Mage_Adminhtml_Contro
         $this->_addContent($this->getLayout()->createBlock('feedback/adminhtml_feedback'));
         $this->renderLayout();
     }
+
     public function newAction() {
         $this->_redirect('*/*/edit');
     }
@@ -62,28 +63,35 @@ class Lister_Feedback_Adminhtml_FeedbackController extends Mage_Adminhtml_Contro
         }
     }
 
-     public function deleteAction()
-          {
-              if($this->getRequest()->getParam('feedback_id') > 0)
-              {
-                try
-                {
-                    $feedbackModel = Mage::getModel('feedback/feedback');
-                    $feedbackModel->setId($this->getRequest()
-                                        ->getParam('feedback_id'))
-                              ->delete();
-                    Mage::getSingleton('adminhtml/session')
-                               ->addSuccess('successfully deleted');
-                    $this->_redirect('*/*/');
-                 }
-                 catch (Exception $e)
-                  {
-                           Mage::getSingleton('adminhtml/session')
-                                ->addError($e->getMessage());
-                           $this->_redirect('*/*/edit', array('feedback_id' => $this->getRequest()->getParam('feedback_id')));
-                  }
-             }
-            $this->_redirect('*/*/');
-       }
+    public function deleteAction() {
+        if ($this->getRequest()->getParam('feedback_id') > 0) {
+            try {
+                $feedbackModel = Mage::getModel('feedback/feedback');
+                $feedbackModel->setId($this->getRequest()
+                                ->getParam('feedback_id'))
+                        ->delete();
+                Mage::getSingleton('adminhtml/session')
+                        ->addSuccess('successfully deleted');
+                $this->_redirect('*/*/');
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')
+                        ->addError($e->getMessage());
+                $this->_redirect('*/*/edit', array('feedback_id' => $this->getRequest()->getParam('feedback_id')));
+            }
+        }
+        $this->_redirect('*/*/');
+    }
+
+    public function exportCsvAction() {
+        $fileName = 'feedback.csv';
+        $grid = $this->getLayout()->createBlock('feedback/adminhtml_feedback_grid');
+        $this->_prepareDownloadResponse($fileName, $grid->getCsvFile());
+    }
+
+    public function exportExcelAction() {
+        $fileName = 'feedback.xml';
+        $grid = $this->getLayout()->createBlock('feedback/adminhtml_feedback_grid');
+        $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
+    }
 
 }

@@ -83,8 +83,21 @@ class Mage_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_Abstrac
                     $layer->setCurrentCategory($category);
                 }
             }
-            $this->_productCollection = $layer->getProductCollection();
+           $this->_productCollection = $layer->getProductCollection();
+           if ($this->getRequest()->getParam('exclude_out_of_stock', 0)) {
+                $oCollection = Mage::getModel('cataloginventory/stock_item')
+                        ->getCollection()
+                        ->addFieldToFilter('is_in_stock', 0);
 
+                $oProducts = array();
+                foreach ($oCollection as $_collection) {
+                    $oProducts[] = $_collection->getProductId();
+                }
+                if (!empty($oProducts))
+                    $this->_productCollection->addIdFilter($oProducts, true);
+            }
+            
+           
             $this->prepareSortableFieldsByCategory($layer->getCurrentCategory());
 
             if ($origCategory) {

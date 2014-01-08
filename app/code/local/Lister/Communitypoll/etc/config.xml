@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <modules>
+            <Lister_Communitypoll>
+                <version>1.0.0</version>
+            </Lister_Communitypoll>
+        </modules>
+        <models>
+            <communitypoll>
+                <class>Lister_Communitypoll_Model</class>
+            </communitypoll>
+        </models>
+        <blocks>
+            <communitypoll>
+                <class>Lister_Communitypoll_Block</class>
+            </communitypoll>
+        </blocks>
+        <helpers>
+            <communitypoll>
+                <class>Lister_Communitypoll_Helper</class>
+            </communitypoll>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <Communitypoll>
+                    <file>communitypoll/communitypoll.xml</file>
+                </Communitypoll>
+            </updates>
+        </layout>
+    </frontend>
+</config>
+

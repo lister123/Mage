@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lister_Event>
+            <version>0.1.0</version>
+        </Lister_Event>
+    </modules>
+    <global>
+        <models>
+            <event>
+                <class>Lister_Event_Model</class>
+            </event>
+        </models>
+         </global>
+    <adminhtml>
+        <events>
+            <catalog_product_prepare_save>
+                <observers>
+                    <Lister_Event_Model_Observer>
+                        <type>singleton</type>
+                        <class>Lister_Event_Model_Observer</class>
+                        <method>onSave</method>
+                    </Lister_Event_Model_Observer>
+                </observers>
+            </catalog_product_prepare_save>
+        </events>
+        </adminhtml>
+   
+</config> 

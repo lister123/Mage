@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <news translate="title" module="news">
+            <title>News</title>
+            <sort_order>50</sort_order>
+            <children>
+                <item translate="title" module="news">
+                    <title>Manage News Item</title>
+                    <action>news/adminhtml_news/</action>
+                    <sort_order>0</sort_order>
+                </item>           
+            </children>
+        </news>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>               
+                    <news translate="title" module="news">
+                        <title>News</title>
+                        <sort_order>1</sort_order>
+                    </news>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

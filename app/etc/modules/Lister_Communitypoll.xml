@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Lister_Communitypoll>
+      <active>true</active>
+      <codePool>local</codePool>
+    </Lister_Communitypoll>
+  </modules>
+</config>

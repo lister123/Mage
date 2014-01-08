@@ -34,6 +34,15 @@
                     </lister_feedback>
                 </observers>
             </sales_order_place_after>
+             <catalog_category_flat_loadnodes_before>
+        <observers>
+            <lister_feedback>
+                <type>singleton</type>
+                <class>Lister_Feedback_Model_Observer</class>
+                <method>addMenuAttributes</method>
+            </lister_feedback>
+        </observers>
+    </catalog_category_flat_loadnodes_before>
         </events>
         <resources>
             <feedback_setup>

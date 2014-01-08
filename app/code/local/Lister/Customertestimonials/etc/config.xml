@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<!-- Root node for Magento configuration files -->
+<config>
+    <modules>
+        <!-- This node's name has to be the same as module's full name
+        including namespace -->
+        <Lister_Customertestimonials>
+            <!-- Current version of module -->
+            <version>1.0.0</version>
+        </Lister_Customertestimonials>
+    </modules>
+    <global>
+        <models>
+            <customertestimonials>
+                <class>Lister_Customertestimonials_Model</class>
+                <resourceModel>customertestimonials_resource</resourceModel>
+            </customertestimonials>
+            <customertestimonials_resource>
+                <class>Lister_Customertestimonials_Model_Resource</class>
+                <entities>
+                    <testimonials>
+                        <table>customer_testimonials</table>
+                    </testimonials>
+                </entities>
+            </customertestimonials_resource>            
+        </models>
+        <resources>
+            <customertestimonials_setup>
+                <setup>
+                    <module>Lister_Customertestimonials</module>
+                </setup>
+            </customertestimonials_setup>
+        </resources>
+        <blocks>
+            <customertestimonials>
+                <class>Lister_Customertestimonials_Block</class>
+            </customertestimonials>
+        </blocks>
+        <helpers>
+        <customertestimonials>
+            <class>Lister_Customertestimonials_Helper</class>
+        </customertestimonials>
+        </helpers>
+
+    </global>
+    <frontend>
+        <routers>
+            <customertestimonials>
+                <use>standard</use>
+                <args>
+                    <module>Lister_Customertestimonials</module>
+                    <frontName>lister</frontName>
+                </args>
+            </customertestimonials>
+        </routers>
+        <layout>
+            <updates>
+                <customertestimonials module="customertestimonials">
+                    <file>myblock.xml</file>
+                </customertestimonials>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <!-- This is how we load our Adminhtml controllers -->
+                    <modules>
+                        <Customertestimonials before="Mage_Adminhtml">Lister_Customertestimonials_Adminhtml</Customertestimonials>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <customertestimonials module="customertestimonials">
+                    <file>myadminblock.xml</file>
+                </customertestimonials>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

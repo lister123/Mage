@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <customertestimonials_index_index>
+        <reference name="content">
+            <block type="customertestimonials/customertestimonials" name="customertestimonials" template="customertestimonials.phtml"/>
+        </reference>
+    </customertestimonials_index_index>
+</layout>
+

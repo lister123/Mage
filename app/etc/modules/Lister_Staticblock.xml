@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+         <modules>
+                <Lister_Staticblock>
+                        <active>true</active>
+                        <codePool>local</codePool>
+                </Lister_Staticblock>
+         </modules>
+</config>

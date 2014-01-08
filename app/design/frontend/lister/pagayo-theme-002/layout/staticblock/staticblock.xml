@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--<layout version="0.1.0">
+    <staticblock_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="left">
+            <block type="cms/block" name="lister_new_block" output="toHtml" after="tags_popular">
+                <action method="setBlockId">
+                    <block_id>lister_new_block</block_id>
+                </action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="sample" template="staticblock/staticblock.phtml"/>
+        </reference>
+    </staticblock_index_index>
+
+</layout>-->
+
+<layout version="0.1.0">
+ 
+    <default>
+       
+        <reference name="right">
+            <block type="core/template" name="custom_static_block">
+                <action method="setTemplate">
+                    <template>staticblock/custom_static_block.phtml</template>
+                </action>
+            </block>
+        </reference>
+        
+        
+    </default>
+     <catalog_product_view> 
+        <reference name="root">
+            <action method="setTemplate"><template>page/3columns.phtml</template></action>
+        </reference>
+           
+<!--     <block type="catalog/product_view_attributes"> 
+         <reference name="content">
+            <action method="setChild">
+                <child>staticblock</child>
+                <name>staticblock</name>
+                <block>staticblock/staticblock</block>
+                <template>staticblock/staticblock.phtml</template>
+            </action> 
+                 <block type="staticblock/staticblock" name="staticblock" template="staticblock/staticblock.phtml"  />  
+             
+       </reference>
+     </block>-->
+     
+
+      
+     </catalog_product_view>
+</layout>

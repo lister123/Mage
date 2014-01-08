@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <footerupdate>
+        <reference name="footer">
+            <!--           <block type="customertestimonials/customertestimonials" name="footer.links" template="customertestimonials.phtml"/>-->
+            <block type="footerupdate/footerupdate" name="footermy" as="footermy" template="footerupdatelinks.phtml">
+                <!--            <block type="core/template" name="footer.nlinks" template="footerupdatelinks.phtml" output="toHtml" />-->
+                <action method="setChild">
+                    <name>footermy</name>
+                    <block>footermy</block>
+                </action>
+            </block>
+        </reference>
+    </footerupdate>
+</layout>
+

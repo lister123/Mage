@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.1.0">
-     
+    
     <feedback_index_index>
         <reference name="content">
             <block type="feedback/feedback" name="feedbackblock" template="feedback/feedback.phtml" />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <catalog_product_view>
+        <reference name="right">
+            <remove name="right.poll" />
+            <block type="communitypoll/communitypoll" name="prodcategory" template="communitypoll/communitypoll.phtml" after="right.reports.product.viewed" />
+        </reference>
+    </catalog_product_view>
+</layout>
+

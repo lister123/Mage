@@ -1,0 +1,26 @@
+<br>
+<div class="block block-poll">
+  <div class="block-title">
+    <strong><span><?php echo $this->__('Similar Products') ?></span></strong>
+  </div>
+
+  <div class="block-content">
+    <ul id="poll-answers">
+      <?php
+      $products = $this->prod();
+      if (sizeof($products) == 0) {
+        echo "No similar products";
+      }
+      else {
+        foreach ($products as $product) {
+          ?>
+          <li>
+            <?php echo $product->getName(); ?>
+          </li>
+        <?php }
+      } ?>
+    </ul>
+
+  </div>
+
+</div>

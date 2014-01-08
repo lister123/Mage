@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lister_Footerupdate>
+            <version>0.1.0</version>
+        </Lister_Footerupdate>
+    </modules>
+    <global>
+        <models>
+            <footerupdate>
+                <class>Lister_Footerupdate_Model</class>
+            </footerupdate>
+        </models>
+         <blocks>
+            <footerupdate>
+                <class>Lister_Footerupdate_Block</class>
+            </footerupdate>
+        </blocks>
+            
+    </global>
+    <frontend>
+        <events>
+            <!-- Before layout is loaded -->
+            <controller_action_layout_load_before>
+                <observers>
+                    <!-- Add category layer handle -->
+                    <category_layer_layout_observer>
+                        <type>singleton</type>
+                        <class>Lister_Footerupdate_Model_Observer</class>
+                        <method>Updatelinks</method>
+                    </category_layer_layout_observer>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
+        <layout>
+             <updates>
+                <footerupdate module="footerupdate">
+                     <file>footercustomhandles.xml</file>
+                 </footerupdate>
+             </updates>
+        </layout>
+    </frontend>
+</config>

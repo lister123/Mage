@@ -57,7 +57,8 @@ class Lister_Feedback_Block_Adminhtml_Feedback_Grid extends Mage_Adminhtml_Block
             'index' => 'feedback_id',
             'is_system' => true,
         ));
-        
+        $this->addExportType('*/*/exportCsv', Mage::helper('feedback')->__('CSV'));
+      $this->addExportType('*/*/exportExcel', Mage::helper('feedback')->__('Excel XML'));
         return parent::_prepareColumns();
     }
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config>
+    <sections>
+        <price_config_section translate="label" module="communitypoll">
+            <label>Price Configuration for Similar Products</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>general</tab>
+            <groups>
+                <price_config_group translate="label" module="communitypoll">
+                    <label>Price Configuration for Similar Products</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <price_config_field translate="label comment">
+                            <label>Discount price</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </price_config_field>
+                    </fields>
+                </price_config_group>
+            </groups>
+        </price_config_section>
+    </sections>
+</config>
