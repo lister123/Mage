@@ -1,0 +1,11 @@
+<?php $newslist = $this->getnewslist(); ?>
+
+<?php foreach($newslist as $news):?>
+    <div class="summary">
+        <h3> <?php echo $news['title']; ?></h3>
+        <div class="excerpt">
+            <?php echo $news['content'];?>
+        </div>
+        <a href="#"> <?php echo $news['category'];?></a>
+    </div>
+<?php endforeach;?>

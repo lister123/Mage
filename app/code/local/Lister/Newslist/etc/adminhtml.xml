@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    
+    <!-- create top bar menu for your admin pages -->
+    <menu>
+        <sachin translate="title" module="newslist"> <!--tag can be anything , module= value must be the name of your module's folder-->
+            <title>News</title>
+            <sort_order>50</sort_order> <!--Order of the menu-->
+            <children> <!--if your menu has children. <children> spell must.-->
+                <child1 translate="title" module="newslist"> <!--tag can be anything , module= value must be the name of your module's folder-->
+                    <title>View News</title>
+                    <action>news/adminhtml_newslist/</action> <!--url of the menu frontname/adminhtml_controllerName/actionName-->
+                    <sort_order>0</sort_order> <!--order of the children-->
+                </child1>
+                <child2 translate="title" module="newslist"> <!--tag can be anything , module= value must be the name of your module's folder-->
+                    <title>Add News</title>
+                    <action>news/adminhtml_newslist/new</action>
+                    <sort_order>1</sort_order>
+                </child2>
+            </children>
+        </sachin>
+    </menu>
+    
+    <!--write access control list for your module-->
+    <acl>
+        <resources>
+            <admin>
+                <children>               
+                    <news translate="title" module="newslist">
+                        <title>News menu</title>
+                        <sort_order>1</sort_order>
+                    </news>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    
+    
+</config>

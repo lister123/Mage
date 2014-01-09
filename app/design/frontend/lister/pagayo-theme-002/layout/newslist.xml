@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<layout version="0.1.0">
+    <default>
+        <reference name="footer_links">
+            <action method="addLink" translate="label title">
+                <label>E-commerce News</label>
+                <url>headlines/Frontnews/displayFrontNews</url>
+                <title>News</title>
+                <prepare>true</prepare>
+            </action> 
+        </reference>
+    </default>
+    <lister_headlines_frontnews_displayfrontnews> <!--routertagname_controllername_actionname-->
+        <reference name="content">
+            <block type="newslist/frontendblock" name="test" template="frontnews.phtml" />
+        </reference>
+    </lister_headlines_frontnews_displayfrontnews>    
+</layout>

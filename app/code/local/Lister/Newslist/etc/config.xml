@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    
+    <!-- Declare module version and folder of the module-->
+    <modules>
+        <Lister_Newslist>
+            <version>0.1.0</version>
+        </Lister_Newslist>
+    </modules>
+
+    <!-- Declare module's models,resource models , blocks , helpers and sql script source-->
+    <global>
+        
+        <models>
+            <newslist> <!-- name of the module.-->
+                <class>Lister_Newslist_Model</class> <!--Path to your model separated by '_'-->
+                <resourceModel>news_resource</resourceModel> <!-- xml tag to search for resource class-->
+            </newslist>
+            <news_resource>
+                <class>Lister_Newslist_Model_Resource</class>
+                <entities>
+                    <news>
+                        <table>mynewslist</table>
+                    </news>
+                </entities>
+            </news_resource>          
+        </models>
+        
+        <blocks>
+            <newslist>
+                <class>Lister_Newslist_Block</class>
+            </newslist>
+        </blocks>
+        
+        <helpers>
+            <newslist>
+                <class>Lister_Newslist_Helper</class>   
+            </newslist>
+        </helpers>
+        
+        <resources>
+            <newslist_setup> <!-- Name of the folder where your install script exists (inside sql folder)-->
+                <setup>
+                    <module>Lister_Newslist</module> <!--path to your module-->
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </newslist_setup>
+        </resources>
+
+    </global>
+    <!-- ********************************************************************************-->
+
+
+    <frontend>
+        <routers>
+
+            <lister_headlines> <!-- used by layout xml. Crap shit create lots of problem -->
+                <use>standard</use>
+                <args>
+                    <module>Lister_Newslist</module><!--path to your module-->
+                    <frontName>headlines</frontName><!--url for your module-->
+                </args>
+            </lister_headlines> 
+
+        </routers>
+        
+        <layout>
+            <updates>
+                <newslistfile module="newslist">
+                    <file>newslist.xml</file>
+                </newslistfile>
+            </updates>
+        </layout>
+    </frontend>
+
+
+    <!-- Declare admin end's url for your module-->
+    <admin>
+        <routers>
+            <rahul> <!--can be any tag even your name -->
+                <use>admin</use>
+                <args>
+                    <module>Lister_Newslist</module><!--path to your module-->
+                    <frontName>news</frontName><!--url for your module-->
+                </args>
+            </rahul> 
+        </routers>
+    </admin>
+    <!-- ********************************************************************************-->
+    
+    
+</config>
