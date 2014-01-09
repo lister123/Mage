@@ -14,5 +14,6 @@ class Lister_Cartfooter_Model_Footer_Observer {
         }       
         return $this;
     }
-
+    
+  
 }

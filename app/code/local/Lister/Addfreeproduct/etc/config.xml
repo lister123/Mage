@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Lister_Addfreeproduct>
+            <version>0.1.0</version>
+        </Lister_Addfreeproduct>
+    </modules>
+    <global>
+    
+        <models>
+            <addfreeproduct>
+                <class>Lister_Addfreeproduct_Model</class>
+            </addfreeproduct>
+        </models>
+        
+        <blocks>
+            <addfreeproduct>
+                <class>Lister_Addfreeproduct_Block</class>
+            </addfreeproduct>
+        </blocks>
+        
+        <helpers>
+            <addfreeproduct>
+                <class>Lister_Addfreeproduct_Helper</class>
+            </addfreeproduct>
+        </helpers>
+        
+        <events>
+                
+            <checkout_cart_save_after>
+                <observers>
+                    <lister_addfreeproduct>
+                        <type>singleton</type>
+                        <class>Lister_Addfreeproduct_Model_Observer</class>
+                        <method>processfreeproduct</method>
+                    </lister_addfreeproduct>
+                </observers>
+            </checkout_cart_save_after>
+   
+            <sales_quote_collect_totals_before>
+                <observers>
+                    <lister_addfreeproduct>
+                        <type>singleton</type>
+                        <class>Lister_Addfreeproduct_Model_Observer</class>
+                        <method>setdiscountamountbefore</method>
+                    </lister_addfreeproduct>
+                </observers>
+            </sales_quote_collect_totals_before>  
+            
+            
+            <!--   <sales_quote_collect_totals_after>
+                <observers>
+                    <lister_addfreeproduct>
+                        <type>singleton</type>
+                        <class>Lister_Addfreeproduct_Model_Observer</class>
+                        <method>setdiscountamount</method>
+                    </lister_addfreeproduct>
+                </observers>
+            </sales_quote_collect_totals_after>  -->
+            
+            <!--
+   <sales_quote_remove_item>
+                <observers>
+                    <lister_addfreeproduct>
+                        <type>singleton</type>
+                        <class>Lister_Addfreeproduct_Model_Observer</class>
+                        <method>removefreeproduct</method>
+                    </lister_addfreeproduct>
+                </observers>
+            </sales_quote_remove_item> -->
+            
+            <!--     <salesrule_validator_process>
+                <observers>
+                    <lister_addfreeproduct>
+                        <type>singleton</type>
+                        <class>Lister_Addfreeproduct_Model_Observer</class>
+                        <method>processfreeproduct</method>
+                    </lister_addfreeproduct>
+                </observers>
+            </salesrule_validator_process>-->            
+            
+        </events>
+    </global>
+	
+</config>

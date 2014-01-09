@@ -29,6 +29,8 @@
                     </lister_cartfooter>
                 </observers>
              </controller_action_layout_load_before>  
+             
+             
         </events>
         
           <blocks>
