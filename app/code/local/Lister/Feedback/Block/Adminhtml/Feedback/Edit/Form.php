@@ -8,7 +8,7 @@ class Lister_Feedback_Block_Adminhtml_Feedback_Edit_Form extends Mage_Adminhtml_
                     'id' => 'edit_form',
                     'action' => $this->getUrl('*/*/save', array('feedback_id' => $this->getRequest()->getParam('feedback_id'))),
                     'method' => 'post',
-                        ),
+                        )
               
         );
 

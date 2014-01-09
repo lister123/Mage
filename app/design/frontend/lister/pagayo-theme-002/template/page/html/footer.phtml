@@ -59,11 +59,10 @@
                     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt002-footer-box1')->toHtml() ?>
                 </div>
                  
-                <div class="box2">
-                    <div class="headline"><?php echo $footerbox2->getTitle(); ?></div>
-                    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt002-footer-box2')->toHtml() ?>
-                </div>
-
+                 <div class="box2">
+                     <div class="headline">Links</div>
+                 <?php echo $this->getChildHtml('footer_links') ?>
+                 </div>
                 <div class="box5">
                     <div class="headline"><?php echo $footerbox5->getTitle(); ?></div>
                     <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('pt002-footer-box5')->toHtml() ?>
@@ -72,6 +71,8 @@
                      <div class="headline">Cart Items with footer configuration</div>
                  <?php echo $this->getChildHtml('cartfooter') ?>
                  </div>
+                
+               
                 <div class="clearer"></div>
             </div>
 
