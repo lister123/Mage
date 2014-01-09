@@ -1,0 +1,39 @@
+OrderID:100000002Customer ID:1 RealOrderId:100000002 DeliveryMethod:flatrate_flatrate Payment:2 Billing ID:3 DeliveryAddress:chennai, chennai BillingAddress:chennai, chennai Subtotal:149 DeliveryCharge:5 TotalPaid: TotalDue:154 CustomerNote: PhoneNumber:2134234123413 Email:assurebala@gmail.com CustomerName:Balakumar s Billing Information:Array
+(
+    [billing_name] => Balakumar s
+    [billing_company] => Lister
+    [billing_street] => chennai
+    [billing_district] => 
+    [billing_zip] => 234234234
+    [billing_city] => chennai
+    [billing_state] => NY
+    [billing_country] => US
+    [billing_telephone] => 2134234123413
+)
+ Shipping Information:Array
+(
+    [shipping_name] => Balakumar s
+    [shipping_company] => Lister
+    [shipping_street] => chennai
+    [shipping_district] => 
+    [shipping_zip] => 234234234
+    [shipping_city] => chennai
+    [shipping_state] => NY
+    [shipping_country] => US
+    [shipping_telephone] => 2134234123413
+)
+ Order Line Items:Array
+(
+    [0] => Array
+        (
+            [sku] => men-shirt
+            [order_quantity] => 1
+        )
+
+    [1] => Array
+        (
+            [sku] => pdf-download
+            [order_quantity] => 1
+        )
+
+)
