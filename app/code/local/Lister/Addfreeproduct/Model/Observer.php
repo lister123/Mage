@@ -2,7 +2,7 @@
 
 class Lister_Addfreeproduct_Model_Observer {
 
-    CONST SKUTOADD = 'oc_sm';
+    CONST SKUTOADD = 'Polo-T- Shirts';
 
     public function processfreeproduct($observer) {       
         $quote = Mage::getSingleton('checkout/cart')->getQuote();
@@ -18,8 +18,9 @@ class Lister_Addfreeproduct_Model_Observer {
         $rules = Mage::getModel('salesrule/rule')
                 ->getCollection()
                 ->setValidationFilter($store->getWebsiteId(), $quote->getCustomerGroupId(), $quote->getCouponCode())
-                ->addFieldToFilter('name', array('like' => array('%test rule%')))
+                ->addFieldToFilter('name', array('like' => array('%free product%')))
                 ->load();
+        
         foreach ($rules as $rule) {
             $rule->load($rule->getId());
         }
@@ -68,7 +69,7 @@ class Lister_Addfreeproduct_Model_Observer {
         $rules = Mage::getModel('salesrule/rule')
                 ->getCollection()
                 ->setValidationFilter($store->getWebsiteId(), $quote->getCustomerGroupId(), $quote->getCouponCode())
-                ->addFieldToFilter('name', array('like' => array('%test rule%')))
+                ->addFieldToFilter('name', array('like' => array('%free product%')))
                 ->load();
         foreach ($rules as $rule) {
             $rule->load($rule->getId());
