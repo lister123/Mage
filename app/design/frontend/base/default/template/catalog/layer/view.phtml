@@ -50,8 +50,17 @@
                     <dt><?php echo $this->__($_filter->getName()) ?></dt>
                     <dd><?php echo $_filter->getHtml() ?></dd>
                 <?php endif; ?>
-                <?php endforeach; ?>
-            </dl>
+                <?php endforeach;?>
+                    <?php
+                        if(!$_REQUEST['eos']) {
+                            $newUrl = stristr($this->getClearUrl(), 'eos=') ? preg_replace('/eos(\=0?)$/', 'eos=1', $this->getClearUrl()) : $this->getClearUrl() . '?eos=1';
+                            ?>
+                        <div><a href="<?php echo $newUrl ?>"?>Hide Out Of Stock Products</a></div>
+                    <?php } else {
+                            $newUrl = preg_replace('/eos(\=1?)$/', 'eos=0', $this->getClearUrl());
+                        ?>
+                        <div><a href="<?php echo $newUrl ?>">Include Out Of Stock Products</a></div>
+                    <?php } ?>
             <script type="text/javascript">decorateDataList('narrow-by-list')</script>
         <?php endif; ?>
     </div>
